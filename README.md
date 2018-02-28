@@ -1,6 +1,6 @@
 # Parcial1Numerico
 
-Correcion parte escrita punto 3a
+##Correcion parte escrita punto 3a
 
 Usando (0,3) en los datos de x0 y x1 de la secante notamos los siguientes datos
 
