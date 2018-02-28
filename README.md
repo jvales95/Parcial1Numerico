@@ -1,5 +1,26 @@
 # Parcial1Numerico
 
+## Punto 1a
+
+El algoritmo usado para sumar el triangulo superior de una matriz es el siguiente:
+
+void triangulo_superior (unsigned v[][MAX], unsigned t)
+{
+    unsigned i, j;
+    int x = 0;
+ 
+    for (i = 0; i < t; i++)
+        for (j = 0; j < t; j++)
+            if (j > i)
+                x += v[i][j];
+ 
+    printf ( "La suma es: %d", x );
+}
+
+Este retorna la suma luego de haber contado la suma en la matriz
+
+##
+
 ## Correcion parte escrita punto 3a
 
 Usando (0,3) en los datos de x0 y x1 de la secante notamos los siguientes datos
