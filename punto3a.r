@@ -2,7 +2,7 @@ rm (list=ls())
 
 Fx <- function(x) log(x+2)+sin(x)
 #Se tiene f= ln(x+2) + sin x, ya que es la interseccion de las dos funciones solicitados
-F1x <- function(x) sin(x) 
+F1x <- function(x) 1/(x+2) + cos(x)
 #Metodo de la Secante
 #Halla la raiz de Fx
 
