@@ -11,7 +11,7 @@ error <- 1E-7
 secante <- function(x0,x1) {
     x<-(Fx(x1)*x0-Fx(x0)*x1)/(Fx(x1)-Fx(x0))
     error <- 1E7
-    while (error > 1.e-4) {
+    while (error > 1.e-7) {
         x0<-x1
         x1<-x
         x<-(Fx(x1)*x0-Fx(x0)*x1)/(Fx(x1)-Fx(x0))
