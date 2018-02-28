@@ -8,16 +8,63 @@ void triangulo_superior (unsigned v[][MAX], unsigned t)
 {
     unsigned i, j;
     int x = 0;
- 
+    
     for (i = 0; i < t; i++)
         for (j = 0; j < t; j++)
-            if (j > i)
+            if (j > i){
                 x += v[i][j];
+            }
  
     printf ( "La suma es: %d", x );
 }
 
 Este retorna la suma luego de haber contado la suma en la matriz
+
+##
+
+## Punto 1b
+
+Para determinar el tiempo y el numero de operaciones se agrego una funcion nueva
+y ademas se agrego una nueva variable de tipo contador, como se puede evidenciar
+acontinuacion: 
+
+void triangulo_superior (unsigned v[][MAX], unsigned t)
+{
+    unsigned i, j;
+    int x = 0, contador = 0;
+    
+    for (i = 0; i < t; i++)
+        for (j = 0; j < t; j++)
+            if (j > i){
+                x += v[i][j];
+                contador++;
+                
+            }
+    tiempo();
+    printf ( "La suma es: %d", x );
+}
+
+Con esta variable cada vez que una suma es realizada un contador contara el numero
+de operaciones.
+
+El tiempo se obtuvo con la siguiente funcion la cual actua al acabar las operaciones
+
+void tiempo()
+{
+ unsigned long long n = 0;
+    while (true) {
+        auto start = std::chrono::high_resolution_clock::now();
+        fib(++n);
+        auto finish = std::chrono::high_resolution_clock::now();
+
+        auto microseconds = std::chrono::duration_cast<std::chrono::microseconds>(finish-start);
+        printf << microseconds.count() << "µs\n";
+        if (microseconds > std::chrono::seconds(1)){
+            break;
+        }
+    }
+ 
+} 
 
 ##
 
