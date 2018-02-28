@@ -78,8 +78,8 @@ void triangulo_superior (unsigned v[][MAX], unsigned t)
             if (j > i){
                 x += v[i][j];
                 contador++;
-                tiempo();
+                
             }
- 
+    tiempo();
     printf ( "La suma es: %d", x );
 }
