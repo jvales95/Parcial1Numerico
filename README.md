@@ -68,6 +68,20 @@ void tiempo()
 
 ##
 
+## Punto 1C
+
+Debido a que las unicas operaciones realizadas en el algoritmo son sumas
+inmediamente sabemos que la complejidad puede estar entre las mas comunes tales 
+como son o(n), o(n^2), o(n^3), etc...
+
+Dada la forma del desarrollo del algoritmo tenemos que la funcion que representa
+dicho algoritmo es o((n+1)n)/2
+
+Si remplazamos los valores de n por 1 debido a que solo son utilizados for en el
+algoritmo tenemos que nuestra complejidad es o(n*n)
+
+##
+
 ## Correcion parte escrita punto 3a
 
 Usando (0,3) en los datos de x0 y x1 de la secante notamos los siguientes datos
