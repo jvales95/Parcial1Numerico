@@ -111,8 +111,10 @@ Al hacer eso obtenemos un codigo donde cada "funcion" nos brinda las siguientes 
         = O(n)
  
  
-fib(unsigned long long n) {
-    return (0==n || 1==n) ? 1 : fib(n-1) + fib(n-2);
+fib (unsigned long long n)
+{
+    
+     return (0==n || 1==n) ? 1 : fib(n-1) + fib(n-2);
 }
 
 
