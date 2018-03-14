@@ -96,13 +96,12 @@ Al hacer eso obtenemos un codigo donde cada "funcion" nos brinda las siguientes 
 
  Pasos para obtener la complejidad de una funcionn, siempre para el peor de los casos:
  
- 1. [TE]. Determinar el tamano de la entrada.
- 2. [OB]. Determinar la operacionn basica.
+ 1. [TE]. Determinar el tamaño de la entrada.
+ 2. [OB]. Determinar la operacion basica.
  
-void leer_matriz (unsigned v[][MAX], unsigned t);
-void triangulo_superior (unsigned v[][MAX], unsigned t);
-void tiempo();
-
+ void leer_matriz(unsigned v[][MAX], unsigned t);
+ void triangulo_superior (unsigned v[][MAX], unsigned t);
+ void tiempo();
 
 
 Luego de sacar la complejidad para cada parte del algoritmo tenemos que la 
