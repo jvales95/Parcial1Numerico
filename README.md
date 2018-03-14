@@ -94,7 +94,7 @@ Al hacer eso obtenemos un codigo donde cada "funcion" nos brinda las siguientes 
  Pasos para obtener la complejidad de una funcionn, siempre para el peor de los casos:
  
  1. [TE]. Determinar el tamano de la entrada.
- 2. [OB]. Determinar la operaciÃ³n bÃ¡sica.
+ 2. [OB]. Determinar la operacion basica.
  
  **/
  
@@ -116,8 +116,7 @@ void tiempo();
         = O(n)
  
  **/
- 
-unsigned long long fib(unsigned long long n) {
+ unsigned long long fib(unsigned long long n) {
     return (0==n || 1==n) ? 1 : fib(n-1) + fib(n-2);
 }
 
@@ -141,7 +140,6 @@ unsigned long long fib(unsigned long long n) {
  
  
  **/
- 
 int main()
 {
     unsigned t, v[MAX][MAX];
@@ -151,10 +149,8 @@ int main()
         printf( "cantidad de elementos matriz?: " );
         scanf ( "%u", &t );
     } while (t < 0 || t > MAX);
- 
     leer_matriz (v, t);
     triangulo_superior (v, t);
- 
     setbuf (stdin, NULL);
     getchar ();
     return 0;
@@ -179,7 +175,6 @@ int main()
 void leer_matriz (unsigned v[][MAX], unsigned t)
 {
     unsigned i, j;
- 
     for (i = 0; i < t; i++)
     {
         for (j = 0; j < t; j++)
@@ -188,13 +183,11 @@ void leer_matriz (unsigned v[][MAX], unsigned t)
             scanf ( "%u", &v[i][j] );
         }
     }
- 
     for (i = 0; i < t; i++)
     {
         for (j = 0; j < t; j++){
             printf ( "%u\t", v[i][j] );
         }
- 
         printf ( "\n" );
     }
 }
@@ -219,7 +212,6 @@ void tiempo()
         auto start = std::chrono::high_resolution_clock::now();
         fib(++n);
         auto finish = std::chrono::high_resolution_clock::now();
-
         auto microseconds = std::chrono::duration_cast<std::chrono::microseconds>(finish-start);
         printf << microseconds.count() << "Âµs\n";
         if (microseconds > std::chrono::seconds(1)){
