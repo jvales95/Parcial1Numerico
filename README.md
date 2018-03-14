@@ -94,21 +94,17 @@ poder obtener la complejidad del algoritmo en si.
 
 Al hacer eso obtenemos un codigo donde cada "funcion" nos brinda las siguientes complejidades
 
-/**
+
  Pasos para obtener la complejidad de una funcionn, siempre para el peor de los casos:
  
  1. [TE]. Determinar el tamano de la entrada.
  2. [OB]. Determinar la operacion basica.
- 
- **/
+
  
 void leer_matriz (unsigned v[][MAX], unsigned t);
 void triangulo_superior (unsigned v[][MAX], unsigned t);
 void tiempo();
 
-
-/**
- 
  COMPLEJIDAD FIB
  
  1. TE: El valor de n
@@ -119,14 +115,10 @@ void tiempo();
  fib(n) = 1 + O(n)
         = O(n)
  
- **/
- 
  unsigned long long fib(unsigned long long n) {
     return (0==n || 1==n) ? 1 : fib(n-1) + fib(n-2);
 }
 
-
-/**
  
  COMPLEJIDAD MAIN
  
@@ -142,9 +134,7 @@ void tiempo();
         = O(n^2)
  
  COMPLEJIDAD FINAL DE TODO EL PROGRAMA: O(n^2)
- 
- 
- **/
+
 
 int main()
 {
@@ -162,8 +152,6 @@ int main()
     return 0;
 }
 
-
-/**
  
  COMPLEJIDAD LEER_MATRIZ
  
@@ -177,7 +165,6 @@ int main()
                    = 2O(n^2)
                    = O(n^2)
  
- **/
 
 void leer_matriz (unsigned v[][MAX], unsigned t)
 {
@@ -198,8 +185,6 @@ void leer_matriz (unsigned v[][MAX], unsigned t)
         printf ( "\n" );
     }
 }
-
-/**
  
 COMPLEJIDAD TIEMPO
  
@@ -211,7 +196,6 @@ Al llamar a fib(), se incluye su orden de complejidad: O(n)
 tiempo(n) = O(n)
           = O(n)
  
- **/
 
 void tiempo()
 {
@@ -229,7 +213,6 @@ void tiempo()
  
 }
 
-/**
  
  COMPLEJIDAD TRIANGULO_SUPERIOR
  
@@ -244,7 +227,6 @@ void tiempo()
                        = O(2n^2)
                        = O(n^2)
  
- **/
 
 void triangulo_superior (unsigned v[][MAX], unsigned t)
 {
