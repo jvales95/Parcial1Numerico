@@ -82,6 +82,192 @@ algoritmo tenemos que nuestra complejidad es o(n*n)
 
 ##
 
+## Correcion punto 1C
+
+Para poder obtener la complejidad del punto 1C es necesario observar nuevamente cada "funcion"
+utilizada en este punto del parcial, y de esta manera ir haciendo las sumas necesarias para
+poder obtener la complejidad del algoritmo en si.
+
+Al hacer eso obtenemos un codigo donde cada "funcion" nos brinda las siguientes complejidades
+
+/**
+ Pasos para obtener la complejidad de una funcionn, siempre para el peor de los casos:
+ 
+ 1. [TE]. Determinar el tamano de la entrada.
+ 2. [OB]. Determinar la operaciÃ³n bÃ¡sica.
+ 
+ **/
+ 
+void leer_matriz (unsigned v[][MAX], unsigned t);
+void triangulo_superior (unsigned v[][MAX], unsigned t);
+void tiempo();
+
+
+/**
+ 
+ COMPLEJIDAD FIB
+ 
+ 1. TE: El valor de n
+ 2. OB: Suma
+ 
+ Al haber recursion: n veces en el peor caso
+ Al haber un caso inicial: 1
+ fib(n) = 1 + O(n)
+        = O(n)
+ 
+ **/
+ 
+unsigned long long fib(unsigned long long n) {
+    return (0==n || 1==n) ? 1 : fib(n-1) + fib(n-2);
+}
+
+
+/**
+ 
+ COMPLEJIDAD MAIN
+ 
+ Complejidad en base a suma de ordenes de complejidad de las funciones utilizadas
+ 
+ Al haber while: O(n)
+ Al haber un llamado a leer leer_matriz: O(n^2)
+ Al haber un llamado a leer triangulo_superior: O(n^2)
+ 
+ main() = O(n) + O(n^2) + O(n^2)
+        = O(n) + 2O(n^2)
+        = 2O(n^2)
+        = O(n^2)
+ 
+ COMPLEJIDAD FINAL DE TODO EL PROGRAMA: O(n^2)
+ 
+ 
+ **/
+ 
+int main()
+{
+    unsigned t, v[MAX][MAX];
+    int= tiempo;
+    do
+    {
+        printf( "cantidad de elementos matriz?: " );
+        scanf ( "%u", &t );
+    } while (t < 0 || t > MAX);
+ 
+    leer_matriz (v, t);
+    triangulo_superior (v, t);
+ 
+    setbuf (stdin, NULL);
+    getchar ();
+    return 0;
+}
+
+
+/**
+ 
+ COMPLEJIDAD LEER_MATRIZ
+ 
+ 1. TE: El valor de v[][MAX]
+ 2. OB: ComparaciÃ³n
+ 
+ Al haber un for: O(n)
+ Al haber un for dentro de otro for: O(n^2)
+ Al haber dos veces dos for's anidados entonces:
+    leer_matriz(n) = O(n^2) + O(n^2)
+                   = 2O(n^2)
+                   = O(n^2)
+ 
+ **/
+void leer_matriz (unsigned v[][MAX], unsigned t)
+{
+    unsigned i, j;
+ 
+    for (i = 0; i < t; i++)
+    {
+        for (j = 0; j < t; j++)
+        {
+            printf ( "Dame el elemento M[%u][%u]: ", (i + 1), (j + 1) );
+            scanf ( "%u", &v[i][j] );
+        }
+    }
+ 
+    for (i = 0; i < t; i++)
+    {
+        for (j = 0; j < t; j++){
+            printf ( "%u\t", v[i][j] );
+        }
+ 
+        printf ( "\n" );
+    }
+}
+
+/**
+ 
+COMPLEJIDAD TIEMPO
+ 
+1. TE: 0
+2. OB: fib()
+ 
+Al haber un while: O(n)
+Al llamar a fib(), se incluye su orden de complejidad: O(n)
+tiempo(n) = O(n)
+          = O(n)
+ 
+ **/
+void tiempo()
+{
+ unsigned long long n = 0;
+    while (true) {
+        auto start = std::chrono::high_resolution_clock::now();
+        fib(++n);
+        auto finish = std::chrono::high_resolution_clock::now();
+
+        auto microseconds = std::chrono::duration_cast<std::chrono::microseconds>(finish-start);
+        printf << microseconds.count() << "Âµs\n";
+        if (microseconds > std::chrono::seconds(1)){
+            break;
+        }
+    }
+ 
+}
+
+/**
+ 
+ COMPLEJIDAD TRIANGULO_SUPERIOR
+ 
+ 1. TE: El valor de v[][MAX]
+ 2. OB: Comparacion
+ 
+ Al haber un for: O(n)
+ Al haber un for dentro de otro for: O(n^2)
+ Al haber un if: O(1)
+ Al haber dos veces dos for's anidados con un if dentro de ellos:
+ triangulo_superior(n) = O(n^2 + n^2)
+                       = O(2n^2)
+                       = O(n^2)
+ 
+ **/
+void triangulo_superior (unsigned v[][MAX], unsigned t)
+{
+    unsigned i, j;
+    int x = 0, contador = 0;
+    for (i = 0; i < t; i++)
+        for (j = 0; j < t; j++)
+            if (j > i){
+                x += v[i][j];
+                contador++;
+                 }
+    tiempo();
+    printf ( "La suma es: %d", x );
+}
+
+
+Luego de sacar la complejidad para cada parte del algoritmo tenemos que la 
+complejidad mayor otenida es de O(n^2) por ende al ser esta la mayor dentro
+del algoritmo se puede decir que el algoritmo utilizado para este punto del 
+parcial posee una complejidad de O(n^2)
+
+
+##
+
 ## Correcion parte escrita punto 3a
 
 Usando (0,3) en los datos de x0 y x1 de la secante notamos los siguientes datos
