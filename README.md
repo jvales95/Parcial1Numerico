@@ -29,7 +29,7 @@ Para determinar el tiempo y el numero de operaciones se agrego una funcion nueva
 y ademas se agrego una nueva variable de tipo contador, como se puede evidenciar
 acontinuacion: 
 
-void triangulo_superior (unsigned v[][MAX], unsigned t)
+    void triangulo_superior (unsigned v[][MAX], unsigned t)
 {
     
     unsigned i, j;
