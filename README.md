@@ -99,9 +99,23 @@ Al hacer eso obtenemos un codigo donde cada "funcion" nos brinda las siguientes 
  1. [TE]. Determinar el tamaño de la entrada.
  2. [OB]. Determinar la operacion basica.
  
- void leer_matriz(unsigned v[][MAX], unsigned t);
- void triangulo_superior (unsigned v[][MAX], unsigned t);
- void tiempo();
+
+/**
+ 
+ COMPLEJIDAD FIB
+ 
+ 1. TE: El valor de n
+ 2. OB: Suma
+ 
+ Al haber recursion: n veces en el peor caso
+ Al haber un caso inicial: 1
+ fib(n) = 1 + O(n)
+        = O(n)
+ 
+ **/
+unsigned long long fib(unsigned long long n) {
+    return (0==n || 1==n) ? 1 : fib(n-1) + fib(n-2);
+}
 
 
 Luego de sacar la complejidad para cada parte del algoritmo tenemos que la 
