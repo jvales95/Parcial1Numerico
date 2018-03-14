@@ -94,13 +94,11 @@ poder obtener la complejidad del algoritmo en si.
 
 Al hacer eso obtenemos un codigo donde cada "funcion" nos brinda las siguientes complejidades
 
-/**
- Pasos para obtener la complejidad de una funciÃ³n, siempre para el peor de los casos:
+ Pasos para obtener la complejidad de una funcionn, siempre para el peor de los casos:
  
  1. [TE]. Determinar el tamano de la entrada.
- 2. [OB]. Determinar la operaciÃ³n bÃ¡sica.
+ 2. [OB]. Determinar la operacionn basica.
  
- **/
 void leer_matriz (unsigned v[][MAX], unsigned t);
 void triangulo_superior (unsigned v[][MAX], unsigned t);
 void tiempo();
