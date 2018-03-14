@@ -6,6 +6,7 @@ El algoritmo usado para sumar el triangulo superior de una matriz es el siguient
 
 void triangulo_superior (unsigned v[][MAX], unsigned t)
 {
+    
     unsigned i, j;
     int x = 0;
     
@@ -30,6 +31,7 @@ acontinuacion:
 
 void triangulo_superior (unsigned v[][MAX], unsigned t)
 {
+    
     unsigned i, j;
     int x = 0, contador = 0;
     
@@ -51,7 +53,9 @@ El tiempo se obtuvo con la siguiente funcion la cual actua al acabar las operaci
 
 void tiempo()
 {
- unsigned long long n = 0;
+    
+    unsigned long long n = 0;
+    
     while (true) {
         auto start = std::chrono::high_resolution_clock::now();
         fib(++n);
@@ -116,6 +120,7 @@ void tiempo();
         = O(n)
  
  **/
+ 
  unsigned long long fib(unsigned long long n) {
     return (0==n || 1==n) ? 1 : fib(n-1) + fib(n-2);
 }
@@ -140,6 +145,7 @@ void tiempo();
  
  
  **/
+
 int main()
 {
     unsigned t, v[MAX][MAX];
@@ -172,6 +178,7 @@ int main()
                    = O(n^2)
  
  **/
+
 void leer_matriz (unsigned v[][MAX], unsigned t)
 {
     unsigned i, j;
@@ -205,6 +212,7 @@ tiempo(n) = O(n)
           = O(n)
  
  **/
+
 void tiempo()
 {
  unsigned long long n = 0;
@@ -237,6 +245,7 @@ void tiempo()
                        = O(n^2)
  
  **/
+
 void triangulo_superior (unsigned v[][MAX], unsigned t)
 {
     unsigned i, j;
